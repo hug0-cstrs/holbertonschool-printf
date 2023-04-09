@@ -1,0 +1,37 @@
+.TH "_printf" "3" "30 Mar 2023" "_printf man page"
+.SH NAME
+_printf - format and print data
+
+.SH SYNOPSIS
+\fB#include <main.h>\fR
+.br
+\fBint _printf(const char *format, ...);\fR
+
+.SH DESCRIPTION
+The \fB_printf\fR function formats and prints data to the standard output stream stdout.
+
+The first argument, \fIformat\fR, is a string that specifies the format of the output. The format string is composed of zero or more directives: ordinary characters (not %), which are copied unchanged to the output stream, and conversion specifications, each of which results in the conversion and printing of the next successive argument.
+
+The conversion specifications start with the % character, followed by optional flags, field width, precision, and length modifier characters, and end with a conversion specifier character that determines the type of conversion to be applied.
+
+The arguments following the format string are the values to be converted and printed, corresponding to the conversion specifications in the format string.
+
+The function returns the number of characters written to the output stream, or a negative value if an error occurs.
+
+.SH RETURN VALUE
+Upon successful completion, _printf() returns the number of characters printed (excluding the null byte used to end output to strings). If an output error occurs, the function returns a negative value.
+
+.SH EXAMPLES
+The following code prints "Hello, world!" to the standard output stream:
+_printf("Hello, world!\n");
+
+The following code prints the value of an integer variable:
+int x = 42;
+_printf("The value of x is %d\n", x);
+
+
+.SH SEE ALSO
+printf(3), fprintf(3), sprintf(3), scanf(3), fscanf(3)
+
+.SH AUTHOR
+This man page was written by Valentin Ralliard and Hugo Castéras
